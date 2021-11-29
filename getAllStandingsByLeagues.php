@@ -8,7 +8,7 @@ if (isset($_POST["league_id"]) && ($_POST["league_id"] != "")) {
     die("We took your IP address and the FBI is on his way");
 }
 
-$query = "SELECT * FROM matches WHERE league_id=?";
+$query = "SELECT * FROM standings WHERE league_id=?";
 
 $stmt = $connection->prepare($query);
 

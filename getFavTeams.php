@@ -2,17 +2,17 @@
 
 include("connection.php");
 
-if (isset($_POST["league_id"]) && ($_POST["league_id"] != "")) {
-    $league_id = $_POST["league_id"];
+if (isset($_POST["user_id"]) && ($_POST["user_id"] != "")) {
+    $user_id = $_POST["user_id"];
 } else {
     die("We took your IP address and the FBI is on his way");
 }
 
-$query = "SELECT * FROM matches WHERE league_id=?";
+$query = "SELECT * FROM likes_teams WHERE user_id=?";
 
 $stmt = $connection->prepare($query);
 
-$stmt->bind_param("i", $league_id);
+$stmt->bind_param("i", $user_id);
 
 $stmt->execute();
 
