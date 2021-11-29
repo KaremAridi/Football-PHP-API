@@ -15,7 +15,7 @@ if (isset($_POST["password"]) && ($_POST["password"] != "")) {
 }
 
 $query = "SELECT * FROM users WHERE email=? AND password=?";
-// $query = "SELECT * FROM users";
+
 $stmt = $connection->prepare($query);
 $stmt->bind_param("ss",$email,$password);
 
