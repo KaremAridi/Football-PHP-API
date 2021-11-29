@@ -1,5 +1,5 @@
 <?php
-
+//Check if email exists!!
 include("connection.php");
 
 if (isset($_POST["first_name"]) && ($_POST["first_name"] != "")) {
@@ -28,7 +28,7 @@ if (isset($_POST["password"]) && ($_POST["password"] != "") && ($_POST["password
 
 $mysql = $connection->prepare("INSERT INTO users(first_name, last_name, email, password) VALUES(?,?,?,?)");
 
-$mysql->bind_param("ssss", $first_name, $last_name, $email, $password); //since all are string ssss
+$mysql->bind_param("ssss", $first_name, $last_name, $email, $password);
 $mysql->execute();
 
 $mysql->close();
