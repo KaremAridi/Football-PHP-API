@@ -1,7 +1,7 @@
 <?php
 
 include("connection.php");
-
+    
 $query = "SELECT * FROM teams";
 
 $stmt = $connection->prepare($query);
