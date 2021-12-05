@@ -2,8 +2,8 @@
 
 include("connection.php");
 
-if (isset($_POST["league_id"]) && ($_POST["league_id"] != "")) {
-    $league_id = $_POST["league_id"];
+if (isset($_GET["league_id"]) && ($_GET["league_id"] != "")) {
+    $league_id = $_GET["league_id"];
 } else {
     die("We took your IP address and the FBI is on his way");
 }
