@@ -2,14 +2,14 @@
 
 include("connection.php");
 
-if (isset($_POST["email"]) && ($_POST["email"] != "")) {
-    $email = $_POST["email"];
+if (isset($_GET["email"]) && ($_GET["email"] != "")) {
+    $email = $_GET["email"];
 } else {
     die("We took your IP address and the FBI is on his way");
 }
 
-if (isset($_POST["password"]) && ($_POST["password"] != "")) {
-    $password = hash("sha256", $_POST["password"]);
+if (isset($_GET["password"]) && ($_GET["password"] != "")) {
+    $password = hash("sha256", $_GET["password"]);
 } else {
     die("We took your IP address and the FBI is on his way");
 }
