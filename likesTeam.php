@@ -1,18 +1,8 @@
 <?php
-//Check if email exists!!
 include("connection.php");
 
-if (isset($_POST["user_id"]) && ($_POST["user_id"] != "")) {
-    $user_id = $_POST["user_id"];
-} else {
-    die("We took your IP address and the FBI is on his way");
-}
-
-if (isset($_POST["team_id"]) && ($_POST["team_id"] != "")) {
-    $team_id = $_POST["team_id"];
-} else {
-    die("We took your IP address and the FBI is on his way");
-}
+$user_id = $data->user_id;
+$team_id = $data->team_id;
 
 $mysql = $connection->prepare("INSERT INTO likes_teams(user_id,team_id) VALUES(?,?)");
 

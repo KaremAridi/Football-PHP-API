@@ -8,7 +8,15 @@ if (isset($_GET["league_id"]) && ($_GET["league_id"] != "")) {
     die("We took your IP address and the FBI is on his way");
 }
 
-$query = "SELECT * FROM matches WHERE league_id=?";
+// SELECT matches.id, matches.date, matches.score_1, matches.score_2, matches.ended, teams.name, a.name, matches.league_id
+// FROM matches
+// JOIN teams 
+// ON matches.team_1 = teams.id 
+// JOIN teams as a
+// ON matches.team_2 = a.id AND matches.league_id=1;
+
+$query = "SELECT matches.id, matches.date, matches.score_1, matches.score_2, matches.ended, teams.name AS `name1`, a.name AS `name2`, matches.league_id FROM matches JOIN teams ON matches.team_1 = teams.id JOIN teams as a ON matches.team_2 = a.id AND matches.league_id=?;";
+
 
 $stmt = $connection->prepare($query);
 
@@ -30,4 +38,3 @@ print $json;
 $stmt->close();
 $connection->close();
     //REDIRECT
-?>
