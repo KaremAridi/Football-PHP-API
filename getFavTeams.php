@@ -2,13 +2,13 @@
 
 include("connection.php");
 
-if (isset($_POST["user_id"]) && ($_POST["user_id"] != "")) {
-    $user_id = $_POST["user_id"];
+if (isset($_GET["user_id"]) && ($_GET["user_id"] != "")) {
+    $user_id = $_GET["user_id"];
 } else {
     die("We took your IP address and the FBI is on his way");
 }
 
-$query = "SELECT * FROM likes_teams WHERE user_id=?";
+$query = "SELECT * FROM likes_teams JOIN teams ON likes_teams.team_id = teams.id AND user_id=?;";
 
 $stmt = $connection->prepare($query);
 
