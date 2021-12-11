@@ -8,7 +8,7 @@ if (isset($_GET["league_id"]) && ($_GET["league_id"] != "")) {
     die("We took your IP address and the FBI is on his way");
 }
 
-$query = "SELECT * FROM standings WHERE league_id=?";
+$query = "SELECT teams.name, standings.id, standings.p, standings.diff, standings.pts, standings.league_Id FROM standings JOIN teams ON standings.team_id = teams.id AND standings.league_id=?;";
 
 $stmt = $connection->prepare($query);
 
