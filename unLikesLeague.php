@@ -2,14 +2,14 @@
 //Check if email exists!!
 include("connection.php");
 
-if (isset($_POST["user_id"]) && ($_POST["user_id"] != "")) {
-    $user_id = $_POST["user_id"];
+if (isset($_GET["user_id"]) && ($_GET["user_id"] != "")) {
+    $user_id = $_GET["user_id"];
 } else {
     die("We took your IP address and the FBI is on his way");
 }
 
-if (isset($_POST["league_id"]) && ($_POST["league_id"] != "")) {
-    $league_id = $_POST["league_id"];
+if (isset($_GET["league_id"]) && ($_GET["league_id"] != "")) {
+    $league_id = $_GET["league_id"];
 } else {
     die("We took your IP address and the FBI is on his way");
 }
