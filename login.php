@@ -13,6 +13,8 @@ if (isset($_GET["password"]) && ($_GET["password"] != "")) {
 } else {
     die("We took your IP address and the FBI is on his way");
 }
+$rem = $connection->prepare("DELETE FROM logged_in;");
+$rem->execute();
 
 $query = "SELECT * FROM users WHERE email=? AND password=?";
 

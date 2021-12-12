@@ -2,7 +2,7 @@
 
 include("connection.php");
 
-$query = "SELECT * FROM logged_in JOIN users ON logged_in.user_id = logged_in.id AND user_id=1;";
+$query = "SELECT * FROM logged_in JOIN users ON logged_in.user_id = users.id;";
 
 $stmt = $connection->prepare($query);
 $stmt->execute();
